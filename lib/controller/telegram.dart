@@ -28,7 +28,7 @@ class  TelegramController  extends  GetxController  {
     debugPrint( "result: $result " );
     if (result != null ) {
       // Преобразуем JsObject в строку JSON, а затем преобразуем ее в строку Map
-      var jsonString = js.context[ 'JSON' ].callMethod( 'stringify' , [result]);
+      String jsonString = js.context[ 'JSON' ].callMethod( 'stringify' , [result]);
       return jsonDecode(jsonString);
     }
 
