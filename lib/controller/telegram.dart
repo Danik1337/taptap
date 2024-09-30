@@ -4,7 +4,7 @@ import  "package:get/get.dart" ;
 import  'dart:js'  as js;
 
 class  TelegramController  extends  GetxController  {
-  Map < String , dynamic >? telegramData;
+  static Map < String , dynamic >? telegramData;
 
   @override
   void onInit() {
@@ -25,7 +25,6 @@ class  TelegramController  extends  GetxController  {
   // Функция для инициализации Telegram WebApp
   static  Map < String , dynamic >? initTelegramWebApp() {
     final result = js.context.callMethod( 'initTelegramWebApp' );
-    js.context.callMethod('expand');
     debugPrint( "result: $result " );
     if (result != null ) {
       // Преобразуем JsObject в строку JSON, а затем преобразуем ее в строку Map
@@ -39,7 +38,6 @@ class  TelegramController  extends  GetxController  {
   static  void sendTelegramData( String data) {
     js.context.callMethod( 'sendTelegramData' , [data]);
   }
-
   // Функция для управления MainButton в Telegram
   static  void setMainButton( String text, bool isVisible) {
     js.context.callMethod( 'setMainButton' , [text, isVisible]);

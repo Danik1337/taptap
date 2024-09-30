@@ -20,6 +20,7 @@
 
     function setMainButton(text, isVisible) {
       if (window.Telegram) {
+      window.Telegram.WebApp.expand;
         Telegram.WebApp.MainButton.setText(text);
         if (isVisible) {
           Telegram.WebApp.MainButton.show();
