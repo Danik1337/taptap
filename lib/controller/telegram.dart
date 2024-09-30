@@ -25,6 +25,7 @@ class  TelegramController  extends  GetxController  {
   // Функция для инициализации Telegram WebApp
   static  Map < String , dynamic >? initTelegramWebApp() {
     final result = js.context.callMethod( 'initTelegramWebApp' );
+    js.context.callMethod('expand');
     debugPrint( "result: $result " );
     if (result != null ) {
       // Преобразуем JsObject в строку JSON, а затем преобразуем ее в строку Map
