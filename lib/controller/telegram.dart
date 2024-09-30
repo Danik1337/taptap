@@ -31,7 +31,6 @@ class  TelegramController  extends  GetxController  {
       String jsonString = js.context[ 'JSON' ].callMethod( 'stringify' , [result]);
       return jsonDecode(jsonString);
     }
-
     return  null ;
   }
 
