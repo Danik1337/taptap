@@ -38,6 +38,19 @@ class  TelegramController  extends  GetxController  {
   static  void sendTelegramData( String data) {
     js.context.callMethod( 'sendTelegramData' , [data]);
   }
+
+  // Функция для отправки данных обратно в Telegram
+  static  String ph(String data) {
+    var pic = js.context.callMethod( 'photo_url' , [data]);
+    if(pic!=null){
+      return(pic);
+    }
+    else{
+      return " ";
+    }
+
+  }
+
   // Функция для управления MainButton в Telegram
   static  void setMainButton( String text, bool isVisible) {
     js.context.callMethod( 'setMainButton' , [text, isVisible]);
